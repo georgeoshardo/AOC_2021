@@ -12,3 +12,8 @@ function rolling_diff(file, window)
 end
 println(sum(rolling_diff(file,3) .> 0))
 
+## Or:
+
+a = file
+sum([1 for (x,y) in zip(a[2:end], a[1:end-1]) if x>y])
+sum([1 for (x,y) in zip([sum([x,y,z]) for (x,y,z) in zip(a[1:end-2],a[2:end-1],a[3:end])][2:end], [sum([x,y,z]) for (x,y,z) in zip(a[1:end-2],a[2:end-1],a[3:end])][1:end-1]) if x>y])
