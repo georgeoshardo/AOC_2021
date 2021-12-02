@@ -17,3 +17,8 @@ println(sum(rolling_diff(file,3) .> 0))
 a = file
 sum([1 for (x,y) in zip(a[2:end], a[1:end-1]) if x>y])
 sum([1 for (x,y) in zip([sum([x,y,z]) for (x,y,z) in zip(a[1:end-2],a[2:end-1],a[3:end])][2:end], [sum([x,y,z]) for (x,y,z) in zip(a[1:end-2],a[2:end-1],a[3:end])][1:end-1]) if x>y])
+
+## Or
+using RollingFunctions
+
+sum(diff(rolling(sum,vec(a),3)) .> 0)
