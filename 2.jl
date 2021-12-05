@@ -6,7 +6,7 @@ let
     z = sum(a[:,2] .* (a .== "down")[:,1]) - sum(a[:,2] .* (a .== "up")[:,1]) 
     p1 = x*z
 end
-
+println(p1)
 mutable struct Ship
     z::Int
     x::Int
