@@ -1,9 +1,6 @@
 #%%
 import csv
 import numpy as np
-from functools import reduce
-pos = np.array([0,0])
-movement = {"forward": np.array([1,0]), "down": np.array([0,1]), "up": np.array([0,-1])}
 a = []
 #%%
 with open("4.txt") as file:
